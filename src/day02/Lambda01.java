@@ -18,8 +18,10 @@ public class Lambda01 {
 		tumElemanlarinToplami1(list);
 		System.out.println("Liste tum elemanlarin toplami-Method");
 		tumElemanlarinToplami2(list);
-		System.out.println("Liste Cift elemanlarin carpimi-Expresion");
+		System.out.println("Liste Cift elemanlarin carpimi-Method");
 		ciftElemanCarpimList(list);
+		System.out.println("Liste Cift elemanlarin carpimi-Expression");
+		ciftElemanCarpimList2(list);
 	}
 	
 	//List in cift elemanlarin karelerini aliniz ve en buyugunu yaazdiriniz
@@ -60,4 +62,16 @@ public class Lambda01 {
 		System.out.println(deger);
 		
 	}
+	
+	//List teki cift elemanlarin carpimini yazdiriniz
+	//Lambda expression...
+	
+	public static void ciftElemanCarpimList2(List<Integer> list) {
+		Integer deger = list.stream().filter(Lambda02_Filter::ciftBul).reduce(1,(x, y)->x*y);
+		//pozitif deger uretiniz
+		Integer deger1 = list.stream().filter(Lambda02_Filter::ciftBul).reduce(-1,(x, y)->x*y);//pozitif deger icin
+		System.out.println(deger);
+	}
+	
+	
 }
