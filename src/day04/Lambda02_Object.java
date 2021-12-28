@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalDouble;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -30,6 +32,9 @@ public class Lambda02_Object {
 		System.out.println(ogrnSayiMaxMin(list));
 		System.out.println(batchOrtIlkUcMaxMin(list));
 		minIkinciOgrnSayisi(list);
+		System.out.println(ortOgr95denBuyukOgrTopl(list));
+		System.out.println(ortOgr95denBuyukOgrTopl1(list));
+		System.out.println(ogr130FazlaBatchlerinOrt(list));
 	}
 
 	
@@ -81,6 +86,27 @@ public class Lambda02_Object {
 		System.out.println(list.stream().sorted(Comparator.comparing(TechPro::getOgrSayisi)).
 				limit(2).skip(1).collect(Collectors.toList()));
 		
+	}
+	
+	//batch ortalamalari 95 den buyuk olan batch lerin ogr sayilarini toplamini yazdiriniz
+	
+	public static int ortOgr95denBuyukOgrTopl(List<TechPro>  list) {
+		return list.stream().filter(t->t.getBetchOrt()>95).map(t->t.getOgrSayisi()).reduce(0, Integer::sum);
+																						//reduce(0,(w,t)->w+t);
+		
+	}
+	
+	public static int ortOgr95denBuyukOgrTopl1(List<TechPro>  list) {
+		return list.stream().filter(t->t.getBetchOrt()>95).
+mapToInt(t->t.getOgrSayisi()).//bu method ile akisa gelen elemanlari int ceviriyor ve sonrasinda matematiksel islemler yapilabiliyor
+			sum(); 				//burada kod kisaldi ve direkt toplamayi cagirdik		
+	}
+	
+	//Ogrenci sayisi 130'dan buyuk olan Batch'lerin batchOrt'larinin ortalamasini bulunuz.
+	public static double ogr130FazlaBatchlerinOrt(List<TechPro>  list) {
+		return list.stream().filter(t->t.getOgrSayisi()>130).mapToDouble(t->t.getBetchOrt()).
+				average().//Burada kodu biraksak return type OptionalDouble olmasi gerekiyor
+			getAsDouble();//sonrasinda getAsDouble diyerek double data tipine cevirdik
 		
 	
 	}
