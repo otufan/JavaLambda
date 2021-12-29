@@ -1,0 +1,4 @@
+Burada Gerekli testlerimizi yapacagiz
+bu test icerigine classlardan ulasmayi deneyecegiz
+Java ogrenmek Icin cok calismak ve test cozmek gerekiyor
+Ayrica Pyhton her durumda avantaj
