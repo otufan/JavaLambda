@@ -6,6 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.OptionalDouble;
+import java.util.OptionalInt;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -35,6 +36,10 @@ public class Lambda02_Object {
 		System.out.println(ortOgr95denBuyukOgrTopl(list));
 		System.out.println(ortOgr95denBuyukOgrTopl1(list));
 		System.out.println(ogr130FazlaBatchlerinOrt(list));
+		System.out.println(gunduzBatchSayisi(list));
+		System.out.println(ogr130MaxBatchOrt(list));
+		System.out.println(ogr150azMinBatchOrt(list));
+		
 	}
 
 	
@@ -110,4 +115,23 @@ mapToInt(t->t.getOgrSayisi()).//bu method ile akisa gelen elemanlari int ceviriy
 		
 	
 	}
+	
+	//task 09-->gunduz batch'lerinin sayisini  yazdiriniz.
+	public static long gunduzBatchSayisi(List<TechPro>  list) {
+		return list.stream().filter(t->t.getBatchName().toLowerCase().contains("gunduz")).count();
+		
+	
+	}
+		
+	//task 10-->Ogrenci sayilari 130'dan fazla olan batch'lerin en buyuk batch ort'unu bulunuz
+	public static int ogr130MaxBatchOrt(List<TechPro>  list) {
+		return list.stream().filter(t->t.getOgrSayisi()>130).mapToInt(TechPro::getBetchOrt).max().getAsInt();
+	
+	
+	}	
+	
+	//task 11-->Ogrenci sayilari 150'dan az olan batch'lerin en kucuk batch ort'unu bulunuz.
+	public static int ogr150azMinBatchOrt(List<TechPro>  list) {
+		return list.stream().filter(t->t.getOgrSayisi()<150).mapToInt(TechPro::getBetchOrt).min().getAsInt();
+	}	
 }
