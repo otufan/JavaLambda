@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Q06 {
     
-    //6 ile 14 arasindaki tum sayilarin karesini ekrana yazdiriniz
-    //Listteki tek tamsayilarin karekoklerinin toplamini ekrana yazdiriniz
+   
+    
 	
 	public static void main(String[] args) {
 		
@@ -24,5 +24,8 @@ public class Q06 {
 		list.stream().filter(t->t<14&&t>6).sorted().map(t->t*t).forEach(t->System.out.println(t + " "));
 		System.out.println("***************");
 		
+		 //Listteki tek tamsayilarin karekoklerinin toplamini ekrana yazdiriniz
+		System.out.println(list.stream().filter(t->t%2==1).map(Math::sqrt).reduce(Double::sum));
+		System.out.println("***************");
 	}
 }
