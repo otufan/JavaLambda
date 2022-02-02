@@ -101,7 +101,11 @@ public class Lambda02_String {
 		}
 		
 		//anyMatch() --> enaz bir eleman sarti saglarsa true aksi durumda false return eder
+		
+		
 		//allMatch() --> tum  elemanlar sarti saglarsa true en az bir eleman sarti saglamazsa false return eder.
+		
+		
 		//noneMatch() --> hic bir sarti SAGLAMAZSA true en az bir eleman sarti SAGLARSA false return eder
 		
 		//karakter sayisi en buyuk elemani yazdiriniz

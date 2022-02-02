@@ -37,12 +37,15 @@ public class Lambda02_File {
         /* 
         //TASK 06 --> test.txt dosyasindaki tum kelimeleri natural order  yazdiriniz.
         System.out.println("\n*** test.txt dosyasindaki tum kelimeleri natural order  yazdiriniz. -->  ");
+        
         //TASK 07 --> test.txt dosyasinda "basari" kelimesinin kac kere gectigini buyuk harf kucuk harf bagımsız yaziniz.
         System.out.println("\n*** test.txt dosyasinda basari kelimesinin kac kere gectigini  yazdiriniz. -->  ");
+        
         //TASK 08 --> test.txt dosyasinda "a" harfi gecen kelimelerin sayisini ekrana yazdiran programi yaziniz
         System.out.println("\n*** test.txt dosyasinda a harfi gecen kelimelerin sayisini ekrana yazdiran programi yazdiriniz. -->  ");
         //TASK 09 --> test.txt dosyasinda icinde "a" harfi gecen kelimeleri yazdiriniz
         System.out.println("\n*** test.txt dosyasinda a harfi gecen kelimeler yazdiriniz. -->  ");
+        
         //TASK 10 --> test.txt dosyasinda kac /farklı harf kullanildigini yazdiriniz
         System.out.println("\n*** test.txt dosyasinda kac /farklı harf kullanildigini  yazdiriniz. -->  ");
         //TASK 11 --> test.txt dosyasinda kac farkli kelime kullanildigini yazdiriniz
